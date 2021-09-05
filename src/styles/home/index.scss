@@ -1,0 +1,40 @@
+.direct{
+  background: #33373E;
+  .directList{
+    .title{
+      height: 70px;
+      line-height: 70px;
+      font-size: 20px;
+      color: #fff;
+      text-indent: 20px;
+      border-bottom: 1px solid #000;
+    }
+  }
+  .btn-box{
+    height: 95px;
+    padding-left: 30px;
+  }
+}
+.user-list{
+  background: #000;
+  table{
+    background: #202223;
+    border-collapse:collapse;
+    color: #fff;
+    width: 100%;
+    border: 1px solid lightgray;
+    th,td{
+      border: 1px solid lightgray;
+      width: 200px;
+      height: 40px;
+      text-indent: 20px;
+    }
+  }
+  .el-table .warning-row {
+    background: oldlace;
+  }
+
+  .el-table .success-row {
+    background: #f0f9eb;
+  }
+}
