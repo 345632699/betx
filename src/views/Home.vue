@@ -4,19 +4,24 @@
       <el-col :span="10" class="logo" :class="collapsed?'logo-collapse-width':'logo-width'">
         <img src="http://bo.betx33.it/Public/New/images/logo.png" alt="">
       </el-col>
-      <el-col :span="10">
+      <el-col :span="7">
         <div class="tools" @click.prevent="collapse">
-          <i class="fa fa-align-justify"></i>
+<!--          <i class="fa fa-align-justify"></i>-->
+        </div>
+      </el-col>
+      <el-col :span="5">
+        <div style="color: #fff">
+          utente：{{sysUserName}}  saldo：2.00
         </div>
       </el-col>
       <el-col :span="4" class="userinfo">
         <el-dropdown trigger="hover">
-          <span class="el-dropdown-link userinfo-inner"><img :src="this.sysUserAvatar" /> {{sysUserName}}</span>
-          <el-dropdown-menu slot="dropdown">
-            <el-dropdown-item>我的消息</el-dropdown-item>
-            <el-dropdown-item>设置</el-dropdown-item>
-            <el-dropdown-item divided @click.native="logout">退出登录</el-dropdown-item>
-          </el-dropdown-menu>
+          <span class="el-dropdown-link userinfo-inner"><img :src="this.sysUserAvatar" /> 退出登录 </span>
+<!--          <el-dropdown-menu slot="dropdown">-->
+<!--            <el-dropdown-item>我的消息</el-dropdown-item>-->
+<!--            <el-dropdown-item>设置</el-dropdown-item>-->
+<!--            <el-dropdown-item divided @click.native="logout">退出登录</el-dropdown-item>-->
+<!--          </el-dropdown-menu>-->
         </el-dropdown>
       </el-col>
     </el-col>

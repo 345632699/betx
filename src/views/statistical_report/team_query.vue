@@ -3,11 +3,11 @@
     <div class="box">
       <div class="header">
         <div class="directList">
-          <div class="title">report</div>
+          <div class="title">Team performance query (subordinate agency team)</div>
         </div>
         <div class="btn-box">
           <el-col :span="3">
-            <el-input placeholder="ID" v-model="value"></el-input>
+            <el-input placeholder="代理ID或代理名字" v-model="value"></el-input>
           </el-col>
           <el-date-picker
               placeholder="date"
@@ -18,15 +18,30 @@
               end-placeholder="结束日期"
               :default-time="['12:00:00', '08:00:00']">
           </el-date-picker>
-
+          <el-select v-model="value" placeholder="请选择">
+            <el-option
+                    v-for="item in options"
+                    :key="item.value"
+                    :label="item.label"
+                    :value="item.value">
+            </el-option>
+          </el-select>
           <el-button type="warning"> search for</el-button>
-          <el-button type="danger">  Add agent</el-button>
         </div>
       </div>
     </div>
     <div class="user-list">
       <mtable :table-data="users" :thead="thead"></mtable>
     </div>
+    <el-pagination
+            @size-change="handleSizeChange"
+            @current-change="handleCurrentChange"
+            :current-page="currentPage"
+            :page-sizes="[100, 200, 300, 400]"
+            :page-size="100"
+            layout="total, sizes, prev, pager, next, jumper"
+            :total="400">
+    </el-pagination>
 
     <!--列表-->
 
@@ -43,7 +58,7 @@ export default {
         name: ''
       },
       thead:[
-        "Opera", "ID", "user", "saldo", "Affiliated agent", "operating"
+        "ID", "user", "Agency level", "Affiliated agent", "Activity gift", "Artificial gift", "Total bet", "Total profit and loss"
       ],
       loading: false,
       users: [],
@@ -83,6 +98,12 @@ export default {
         this.loading = false;
         //NProgress.done();
       });
+    },
+    handleSizeChange(val) {
+      console.log(`每页 ${val} 条`);
+    },
+    handleCurrentChange(val) {
+      console.log(`当前页: ${val}`);
     }
   },
   mounted() {

@@ -45,7 +45,7 @@ let routes = [
         iconCls: 'fa fa-id-card-o',
         children: [
             { path: '/cambia_password', component: cambiaPassword, name: 'cambia password' },
-            { path: '/page5', component: Page5, name: '页面5' }
+            { path: '/page5', component: Page5, name: '页面5', hidden: true }
         ]
     },
     {
@@ -63,9 +63,6 @@ let routes = [
         name: 'lista utente',
         iconCls: 'el-icon-message',//图标样式class
         children: [
-            { path: '/main', component: Main, name: '主页', hidden: true },
-            { path: '/table', component: Table, name: 'Table' },
-            { path: '/form', component: Form, name: 'Form' },
             { path: '/user_list', component: manageHomepage, name: 'user list' },
             { path: '/report', component: report, name: 'report' },
         ]
@@ -77,8 +74,8 @@ let routes = [
         iconCls: 'el-icon-message',//图标样式class
         children: [
             { path: '/team_query', component: teamQuery, name: 'Team performance query' },
-            { path: '/bill_report', component: billReport, name: 'bill report' },
-            { path: '/estratto', component: estrattoConto, name: 'estratto conto' }
+            { path: '/estratto', component: estrattoConto, name: 'estratto conto' },
+            { path: '/bill_report', component: billReport, name: 'bill report' }
         ]
     },
     {
